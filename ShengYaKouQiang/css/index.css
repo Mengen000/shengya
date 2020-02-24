@@ -1,0 +1,1058 @@
+/* 一、CSS Reset 重置HTML标签的默认样式,使之统一化标准化(但是未必好用)——也称为Normalize*/
+/* 请参考：normalize.css   http://necolas.github.io/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+/* 二、Scaffolding  脚手架设定——项目的样式初始化,使得样式更便于后续内容的编写*/
+/* 请参考Bootstrap3源码中的scaffolding.less + type.less文件 */
+/* scaffolding.less编译后的结果在bootstrap.css: 1058~1162*/
+/* type.less编译后的结果在bootstrap.css: 1163~1518*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  font-family: "microsoft yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #222;
+  background-color: #fff;
+}
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+a {
+  color: #5f666c;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #4e555b;
+  /*设计图缺失鼠标悬停后的超链接样式*/
+  text-decoration: none;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+figure {
+  margin: 0;
+}
+img {
+  vertical-align: middle;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.img-circle {
+  border-radius: 50%;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+.sr-only {
+  /*Screen Reader: 辅助盲人的读屏软件设置的内容*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+[role="button"] {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 12px;
+}
+p {
+  margin: 0 0 10px;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+.list-inline > li {
+  float: left;
+}
+.list-inline:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+/* 三、Layout System 布局系统——如Grid等*/
+/* 请参考Bootstrap3源码中的grid.less */
+/* grid.less编译后的结果在bootstrap.css:  1571~2328 */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1230px;
+  /*设计图中内容宽1200px,但是布局系统外加padding:30px*/
+}
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  float: left;
+}
+.col-12 {
+  width: 100%;
+}
+.col-11 {
+  width: 91.66666667%;
+}
+.col-10 {
+  width: 83.33333333%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-8 {
+  width: 66.66666667%;
+}
+.col-7 {
+  width: 58.33333333%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-5 {
+  width: 41.66666667%;
+}
+.col-4 {
+  width: 33.33333333%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-2 {
+  width: 16.66666667%;
+}
+.col-1 {
+  width: 8.33333333%;
+}
+.col-pull-12 {
+  right: 100%;
+}
+.col-pull-11 {
+  right: 91.66666667%;
+}
+.col-pull-10 {
+  right: 83.33333333%;
+}
+.col-pull-9 {
+  right: 75%;
+}
+.col-pull-8 {
+  right: 66.66666667%;
+}
+.col-pull-7 {
+  right: 58.33333333%;
+}
+.col-pull-6 {
+  right: 50%;
+}
+.col-pull-5 {
+  right: 41.66666667%;
+}
+.col-pull-4 {
+  right: 33.33333333%;
+}
+.col-pull-3 {
+  right: 25%;
+}
+.col-pull-2 {
+  right: 16.66666667%;
+}
+.col-pull-1 {
+  right: 8.33333333%;
+}
+.col-pull-0 {
+  right: auto;
+}
+.col-push-12 {
+  left: 100%;
+}
+.col-push-11 {
+  left: 91.66666667%;
+}
+.col-push-10 {
+  left: 83.33333333%;
+}
+.col-push-9 {
+  left: 75%;
+}
+.col-push-8 {
+  left: 66.66666667%;
+}
+.col-push-7 {
+  left: 58.33333333%;
+}
+.col-push-6 {
+  left: 50%;
+}
+.col-push-5 {
+  left: 41.66666667%;
+}
+.col-push-4 {
+  left: 33.33333333%;
+}
+.col-push-3 {
+  left: 25%;
+}
+.col-push-2 {
+  left: 16.66666667%;
+}
+.col-push-1 {
+  left: 8.33333333%;
+}
+.col-push-0 {
+  left: auto;
+}
+.col-offset-12 {
+  margin-left: 100%;
+}
+.col-offset-11 {
+  margin-left: 91.66666667%;
+}
+.col-offset-10 {
+  margin-left: 83.33333333%;
+}
+.col-offset-9 {
+  margin-left: 75%;
+}
+.col-offset-8 {
+  margin-left: 66.66666667%;
+}
+.col-offset-7 {
+  margin-left: 58.33333333%;
+}
+.col-offset-6 {
+  margin-left: 50%;
+}
+.col-offset-5 {
+  margin-left: 41.66666667%;
+}
+.col-offset-4 {
+  margin-left: 33.33333333%;
+}
+.col-offset-3 {
+  margin-left: 25%;
+}
+.col-offset-2 {
+  margin-left: 16.66666667%;
+}
+.col-offset-1 {
+  margin-left: 8.33333333%;
+}
+.col-offset-0 {
+  margin-left: 0%;
+}
+/* 至此布局系统基本设定完成,但是还需要清除浮动,消除第一个和最后一个子元素的margin对父元素的影响 */
+/* 见bootstrap.css: 6519~6582 */
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after {
+  /*生成空白的table元素成为第一个和最后一个子元素,防止原先的子元素的margin越界*/
+  content: " ";
+  display: table;
+}
+.container:after,
+.container-fluid:after,
+.row:after {
+  /*清除布局系统中的浮动元素对容器和行造成的影响*/
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+/* 四、Components 页面公共组件抽象——如轮播等*/
+.dropdown {
+  position: relative;
+}
+.dropdown .caret {
+  cursor: pointer;
+}
+.dropdown .menu {
+  position: absolute;
+  width: 100px;
+  background: #fff;
+  z-index: 99;
+  display: none;
+}
+.dropdown .menu ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.6em;
+}
+/* 五、Page Parts 当前页面专有的不同部分——如医生列表*/
+.topbar,
+.navbar,
+.banner,
+.intro,
+.main,
+.bottombar,
+.copyright {
+  min-width: 1230px;
+}
+.topbar {
+  background: #fff;
+}
+.topbar .search-box {
+  margin-top: 2px;
+}
+.topbar .search-box .title {
+  color: #969696;
+  font-size: 16px;
+  font-weight: bold;
+  text-align-last: justify;
+  line-height: 2em;
+}
+.topbar .search-box .input-group {
+  position: relative;
+  margin-right: 22px;
+}
+.topbar .search-box .input-group input {
+  width: 132px;
+  height: 22px;
+  border: 1px solid #b9b9b9;
+  outline: none;
+}
+.topbar .search-box .input-group input::-webkit-input-placeholder {
+  color: #ebebeb;
+}
+.topbar .search-box .input-group .search {
+  position: absolute;
+  right: -22px;
+  width: 22px;
+  height: 22px;
+  background: #b9b9b9 url(../img/iconlist.png) 3px -97px;
+}
+.topbar .iconbox {
+  text-align: center;
+  margin-right: 27px;
+}
+.topbar .iconbox li {
+  border-left: 1px solid #d0eae9;
+  padding: 0 30px 7px;
+}
+.topbar .iconbox li:last-child {
+  border-right: 1px solid #d0eae9;
+}
+.topbar .iconbox .title {
+  display: block;
+  color: #139893;
+  line-height: 2.4em;
+}
+.topbar .iconbox .icon {
+  display: inline-block;
+  height: 20px;
+  background-image: url(../img/iconlist.png);
+}
+.topbar .iconbox .phone {
+  width: 20px;
+}
+.topbar .iconbox .location {
+  width: 13px;
+  background-position: 0 -30px;
+  margin-left: -1px;
+}
+.topbar .iconbox .weibo {
+  width: 25px;
+  background-position: 0 -60px;
+}
+.topbar .iconbox .caret {
+  display: block;
+  width: 12px;
+  height: 5px;
+  background: url(../img/iconlist.png) 0 -90px;
+  margin: 0 auto;
+}
+.navbar {
+  background: #139893;
+}
+.navbar .list-inline {
+  font-size: 16px;
+  line-height: 3em;
+}
+.navbar .list-inline li {
+  width: 10%;
+  text-align: center;
+}
+.navbar .list-inline .active,
+.navbar .list-inline li:hover {
+  background: #eeb334;
+}
+.navbar .list-inline a {
+  color: #fff;
+}
+.banner {
+  min-height: 550px;
+  background: url(../img/banner_bg.jpg);
+  background-size: cover;
+  text-align: center;
+}
+.banner .banner1 {
+  margin: 30px 60px;
+}
+.banner .banner-right {
+  padding: 75px 110px;
+}
+.banner h1 {
+  color: #eeb334;
+  font-size: 37px;
+  font-family: simsun;
+}
+.banner h1 .caret {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/iconlist.png) 0 -120px;
+}
+.banner h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  color: #22a8a1;
+  text-align: left;
+  border-top: 1px solid #22a8a1;
+  border-bottom: 1px solid #22a8a1;
+  padding: 5px 0;
+}
+.banner .list-inline {
+  margin-top: 18px;
+}
+.banner .list-inline li {
+  width: 33.3%;
+  text-align: left;
+  color: #757575;
+  font-size: 15px;
+}
+.banner .list-inline li b {
+  display: inline-block;
+  width: 20px;
+  height: 19px;
+  background: url(../img/iconlist.png) 0 -149px;
+  vertical-align: middle;
+}
+.banner .logo2 {
+  margin: 90px 0 0;
+}
+.intro {
+  background: #ececec;
+  padding: 20px 0;
+}
+.intro .col-3 {
+  padding: 0 6px;
+}
+.intro .intro-item {
+  background: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.intro .intro-item img {
+  width: 100%;
+  border-bottom: 2px solid #139893;
+}
+.intro .intro-item h5 {
+  color: #139893;
+  margin-bottom: 6px;
+}
+.intro .intro-item p {
+  color: #646361;
+  font-size: 12px;
+}
+.main {
+  background: #fff;
+}
+.main .container {
+  padding: 13px 0;
+}
+.main .container .service {
+  margin-bottom: 70px;
+}
+.main .container .service .left {
+  width: 315px;
+  float: left;
+  background: linear-gradient(135deg, #fdfdfd 0%, #f3faf9 100%);
+  padding: 15px 15px 2px;
+}
+.main .container .service .left h4 {
+  color: #139893;
+}
+.main .container .service .left .list-inline li {
+  color: #5f666c;
+  font-size: 12px;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 3px;
+}
+.main .container .service .left .list-inline li:not(:last-child):after {
+  content: "|";
+  padding: 0 5px;
+}
+.main .container .service .right {
+  margin-left: 350px;
+}
+.main .container .service .right .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.main .container .service .right .col-4 {
+  padding: 0 5px;
+}
+.main .container .service .right h5,
+.main .container .service .right h6 {
+  position: absolute;
+  writing-mode: vertical-lr;
+  color: #aeb4bb;
+}
+.main .container .service .right h5 {
+  color: #7f868c;
+  font-size: 16px;
+}
+.main .container .service .right .box_1_1 {
+  position: relative;
+  background: linear-gradient(135deg, #f4f8fa 0%, #e5edf6 100%);
+}
+.main .container .service .right .box_1_1 img {
+  margin: 40px 0 20px 100px;
+}
+.main .container .service .right .box_1_1 h5 {
+  top: 40px;
+  left: 18px;
+}
+.main .container .service .right .box_1_1 h6 {
+  top: 40px;
+  left: 0;
+}
+.main .container .service .right .box_1_2 {
+  margin-top: 5px;
+  position: relative;
+  background: linear-gradient(135deg, #efe1bc 0%, #f6eed8 100%);
+}
+.main .container .service .right .box_1_2 img {
+  margin: 30px 130px 20px 35px;
+}
+.main .container .service .right .box_1_2 h5 {
+  top: 10px;
+  right: 5px;
+}
+.main .container .service .right .box_1_2 h6 {
+  top: 10px;
+  right: 25px;
+}
+.main .container .service .right .box_2_1 {
+  position: relative;
+  background: #d9f0f6;
+}
+.main .container .service .right .box_2_1 img {
+  margin: 35px 110px 35px 60px;
+}
+.main .container .service .right .box_2_1 h5 {
+  top: 15px;
+  right: 10px;
+}
+.main .container .service .right .box_2_1 h6 {
+  top: 15px;
+  right: 30px;
+}
+.main .container .service .right .box_2_2 {
+  margin-top: 5px;
+  position: relative;
+  background: linear-gradient(135deg, #f9f9f9 0%, #edeeef 100%);
+}
+.main .container .service .right .box_2_2 img {
+  margin: 25px 30px 15px 63px;
+}
+.main .container .service .right .box_2_2 h5 {
+  top: 5px;
+  left: 25px;
+}
+.main .container .service .right .box_2_2 h6 {
+  top: 5px;
+  left: 5px;
+}
+.main .container .service .right .box_3_1 {
+  position: relative;
+  background: linear-gradient(90deg, #fff 60%, #f1e7cc 100%);
+}
+.main .container .service .right .box_3_1 img {
+  margin: 0;
+}
+.main .container .service .right .box_3_1 h5 {
+  top: 2px;
+  right: 10px;
+}
+.main .container .service .right .box_3_1 h6 {
+  top: 2px;
+  right: 30px;
+}
+.main .container .service .right .box_3_2 {
+  margin-top: 5px;
+  position: relative;
+  background: radial-gradient(farthest-corner at 100% 100%, #fff 40%, #ceddec 100%);
+}
+.main .container .service .right .box_3_2 img {
+  opacity: 0.3;
+  margin: 66px 36px 46px 136px;
+}
+.main .container .service .right .box_3_2 h5 {
+  top: 40px;
+  left: 25px;
+}
+.main .container .service .right .box_3_2 h6 {
+  top: 40px;
+  left: 5px;
+}
+.main .container .specialist {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main .container .specialist h1 {
+  color: #222222;
+}
+.main .container .specialist h4 {
+  color: #139893;
+  margin-bottom: 28px;
+}
+.main .container .specialist .arrow-left,
+.main .container .specialist .arrow-right {
+  display: inline-block;
+  width: 90px;
+  height: 4px;
+  background-image: url(../img/iconlist.png);
+  vertical-align: middle;
+}
+.main .container .specialist .arrow-left {
+  background-position: 0 -180px;
+}
+.main .container .specialist .arrow-right {
+  background-position: 0 -170px;
+}
+.main .container .specialist .col-3 {
+  padding: 0 8px;
+  text-align: center;
+}
+.main .container .specialist .col-3 img {
+  max-width: 100%;
+}
+.main .container .specialist .col-3 h3 {
+  display: inline-block;
+  border-bottom: 3px solid #f6ad02;
+  padding-bottom: 6px;
+}
+.main .container .q_a .left,
+.main .container .q_a .right {
+  width: 465px;
+  margin-bottom: 60px;
+}
+.main .container .q_a .left li,
+.main .container .q_a .right li {
+  line-height: 2.15em;
+  border-bottom: 1px dotted #727471;
+}
+.main .container .q_a .left li small,
+.main .container .q_a .right li small {
+  float: right;
+  font-size: 0.8em;
+}
+.main .container .q_a .right li {
+  text-align: right;
+}
+.main .container .q_a .right li small {
+  float: left;
+}
+.main .container .q_a .middle {
+  margin: 0 500px;
+  text-align: center;
+}
+.main .container .q_a .middle h3 {
+  background: #f6ad02;
+  color: #fff;
+  padding: 25px 0;
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+.main .container .q_a .middle h4 {
+  color: #fff;
+  background: #139893;
+  margin: 0;
+  padding: 11px 0;
+}
+.main .container .q_a:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+.main .container .environment .tabs ul {
+  margin-bottom: 20px;
+}
+.main .container .environment .tabs ul li {
+  color: #139893;
+  font-size: 16px;
+  padding: 6px 13px;
+  cursor: pointer;
+}
+.main .container .environment .tabs ul li.active {
+  border-bottom: 2px solid #f6ad02;
+}
+.main .container .environment .tabs .pane {
+  display: none;
+}
+.main .container .environment .tabs .pane .col-2 {
+  padding: 0 22px;
+  text-align: center;
+}
+.main .container .environment .tabs .pane .col-2 img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.main .container .environment .tabs .pane.active {
+  display: block;
+}
+.bottombar {
+  background: #414141;
+  color: #fff;
+}
+.bottombar a {
+  color: #999999;
+}
+.bottombar .pinpai {
+  margin: 50px 20px 30px;
+  float: left;
+}
+.bottombar .news {
+  border-left: 1px solid #585858;
+  border-right: 1px solid #585858;
+  padding: 0 50px;
+  margin: 30px;
+  float: left;
+  width: 660px;
+}
+.bottombar .news .list-inline {
+  padding-left: 10px;
+  line-height: 3em;
+}
+.bottombar .news .list-inline li {
+  width: 50%;
+}
+.bottombar .news .list-inline li a:before {
+  content: '· ';
+}
+.bottombar .contact {
+  padding: 40px 0 0 58px;
+  color: #9e9e9e;
+}
+.bottombar .contact .erweima {
+  float: left;
+}
+.bottombar .contact .weixin {
+  display: inline-block;
+  margin: 20px 0 30px 10px;
+}
+.bottombar .contact > p {
+  margin: 0;
+}
+.copyright {
+  background: #303030;
+  color: #999999;
+  line-height: 5em;
+  text-align: center;
+}
+.copyright p {
+  margin: 0;
+}
